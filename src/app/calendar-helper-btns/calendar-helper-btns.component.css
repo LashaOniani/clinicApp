@@ -1,0 +1,53 @@
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    border-radius: 3.125rem;
+    font-size: 1.125rem;
+    height: 3.12rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button > svg {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.edit-btn{
+    background-color: #ECF2F8;
+    color: #18A4E1; 
+    padding-top: 0.62rem;
+    padding-left: 2rem;
+    padding-bottom: 0.75rem;
+    padding-right:  2.13rem;
+}
+
+.edit-btn:hover,
+.edit-btn-active{
+    background-color: #18A4E1;
+    color: #ECF2F8;
+}
+
+.del-btn{
+    color: #FF93A6;
+    background-color: #fff;
+    padding-top: 0.75rem;
+    padding-left: 2rem;
+    padding-bottom: 0.75rem;
+    padding-right:  2.56rem; 
+    border: 1px solid #FF93A6;
+}
+.del-btn:hover,
+.del-btn-active {
+    background-color: #FF93A6;
+    color: #fff;
+    fill: #fff;
+}
+
+.del-btn > svg,
+.edit-btn> svg{
+    margin-right: 1rem;
+}

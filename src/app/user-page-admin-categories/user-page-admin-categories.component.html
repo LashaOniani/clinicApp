@@ -1,0 +1,29 @@
+<table class="categories">
+    <tr>
+        <th>სახელი/გვარი</th>
+        <th>კატეგორია</th>
+        <th>ფოტოსურათი</th>
+        <!-- ნახვებს ვამატებ რეიტინგის feture ს დამატებამდე -->
+        <th>ნახვები</th>
+        <th></th>
+    </tr>
+    <tr class="pople-list" *ngFor="let emp of emps.DoctorsList">
+        <td>{{emp.first_Name}} {{emp.last_Name}}</td>
+        <td>{{emp.category_name}}</td>
+        <td>
+            <img class="profilepic"
+                [src]="emp.picData ? 'data:image/png;base64,' + emp.picData : '/default-picture/images.png'" />
+        </td>
+        <td>{{emp.view_count}}</td>
+        <td>
+            <button class="icon g" (click)="editInfo()">
+                <img src="/default-picture/edit.png"/>
+            </button>
+        </td>
+        <td>
+            <button class="icon r" (click)="deleteEmp()">
+                <img src="/default-picture/delete.png"/>
+            </button>
+        </td>
+    </tr>
+</table>

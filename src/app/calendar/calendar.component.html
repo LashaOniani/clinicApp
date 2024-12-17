@@ -1,0 +1,145 @@
+<div [class]=" visitorStatus ? 'calendar flex-dir-column': 'calendar'">
+
+    <div class="calendar-component">
+        
+        <div class="calendar-header">
+        <h4>{{this.yearToDisplay}}</h4>
+        <button (click)="getPervMonth()"><img src="default-picture/arrow-l.png"></button>
+        <span
+            class="calendar-month-anotation flex-c">{{this.monthToDisplay}}</span>
+        <button (click)="getNextMonth()"><img src="default-picture/arrow-r.png"></button>
+    </div>
+    <div class="calendar-main-container">
+        <div class="calendar-main">
+
+            <div class="calendar-main-header">
+                <div class="calendar-main-header-buttons flex-c bwh top">
+                    <button (click)="minusSevenDay()" class="calendar-main-btn">
+                        <!-- <img src="default-picture/arrow-l.png"> -->
+                        <svg class="rotate-l"><use xlink:href="assets/icons.svg#arrow-right"></use></svg>
+                    </button>
+                    <button (click)="plusSevenDay()" class="calendar-main-btn">
+                        <svg><use xlink:href="assets/icons.svg#arrow-right"></use></svg>
+                    </button>
+                </div>
+                <div class="bwh flex-c top" *ngFor="let day of sevenDayArr">
+                    <span class="calendar-days">{{day.id}}</span> <span class="cb">( {{day.day.slice(0, 3)}} )</span>
+                </div>
+            </div>
+
+            <div class="calendar-main-workingdays" *ngFor="let hour of workingHours">
+                
+                <div class="calendar-main-workingdays-hours bwh flex-c" title="utc+4">
+                    {{hour}}:00 - {{hour+1}}:00
+                </div>
+
+                <div class="calendar-main-workingdays-days bwh flex-c" *ngFor="let day of sevenDayArr">
+
+                    <ng-container *ngIf="day.day === 'შაბათი' || day.day === 'კვირა';">
+                        <span class="weekDays"></span>
+                    </ng-container>
+
+                    <ng-container *ngIf="visitorStatus ==='User' || visitorStatus ==='Doctor'">
+                        <ng-container *ngIf="day.reservations">
+                            <ng-container *ngFor="let time of day.reservations">
+                                <span *ngIf="time.start_Date.getHours() === hour" class="weekDays gb" [style]="visitorStatus !== 'User' ? 'justify-content:center; padding: 0;' : '' ">
+                                    <button *ngIf="visitorStatus === 'User' && delReservationBtnState"
+                                             class="myVisit delete" 
+                                             (click)="deleteUserReservation(time.id, time.user_Id, time.employee_Id)">
+                                            <svg><use xlink:href="assets/icons.svg#delete"></use></svg>
+                                    </button>
+                                    <button *ngIf="visitorStatus === 'User' && editReservationBtnState" class="myVisit edit"><svg><use xlink:href="assets/icons.svg#edit"></use></svg></button>
+
+                                    <div [class]="visitorStatus === 'User' ? 'myVisit-text' : '' ">
+                                        <ng-container *ngIf="visitorStatus === 'User'; else docTemplate">
+                                            <app-calendar-my-bookings
+                                            [isEditBtnClicked]="editReservationBtnState"
+                                            [isDelBtnClicked]="delReservationBtnState"
+                                            [bookingObject]="time"
+                                            [visitorStatus]="visitorStatus"></app-calendar-my-bookings>
+                                        </ng-container>
+                                        
+                                        <ng-template #docTemplate>
+                                            <app-calendar-my-bookings 
+                                            [bookingObject]="time"
+                                            [visitorStatus]="visitorStatus"></app-calendar-my-bookings>
+                                        </ng-template>
+                                        <!-- {{visitorStatus === 'User' ? 'ჩემი ჯავშანი' : 'დაჯავშნილია'}} -->
+                                    </div>
+                                </span>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+
+                    <ng-container *ngIf="!visitorStatus && day.day !== 'შაბათი' && day.day !== 'კვირა'">
+
+                        <ng-container *ngIf="day.isReserved === false && compareDates(day.wholeDate, time)">
+                            <app-calendar-booking
+                                [authorized]="isAuthorized" 
+                                [doctor]="doctorId" 
+                                [data]="day" 
+                                [hour]="hour"
+                                [btnState]="newBtnState"
+                                (notifyStatus)="handleStatus($event)">
+                            </app-calendar-booking>
+                        </ng-container>
+
+                        <ng-container *ngIf="day.isReserved === true">
+                            <ng-container *ngFor="let reservedDay of day.reservations">
+
+                                <ng-container *ngIf="reservedDay.start_Date.getHours() === hour">
+                                    
+                                    <ng-container *ngIf="reservedDay.status === 'myVisit'">
+                                        <span class="weekDays gb">
+                                            <button *ngIf="delReservationBtnState" class="myVisit delete" (click)="deleteUserReservation(reservedDay.id, reservedDay.user_Id, reservedDay.employee_Id)">
+                                                <svg><use xlink:href="assets/icons.svg#delete"></use></svg></button>
+                                            <button *ngIf="editReservationBtnState" class="myVisit edit"><svg><use xlink:href="assets/icons.svg#edit"></use></svg></button>
+                                            <p class="myVisit-text">
+                                                ჩემი ჯავშანი
+                                            </p>
+                                        </span>
+                                    </ng-container>
+                                    
+                                    <span *ngIf="reservedDay.status === 'visit'" class="weekDays rb"></span>
+
+                                </ng-container>     
+
+                            </ng-container>
+
+                            <app-calendar-booking
+                                *ngIf="isReservationAvailable(day, hour) && day.wholeDate.getTime() >= time.getTime()"
+                                [authorized]="isAuthorized" 
+                                [doctor]="doctorId" 
+                                [data]="day" 
+                                [hour]="hour"
+                                [btnState]="newBtnState"
+                                (notifyStatus)="handleStatus($event)">
+                            </app-calendar-booking>
+
+
+                        </ng-container>
+
+                    </ng-container>
+
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="unauthorized" *ngIf="!isAuthorized ? true : null">
+            <span class="r">დასაჯავშნად გთხოვთ გაიაროთ</span>
+            <span class="r cb">ავტორიზაცია ან რეგისტრაცია.</span>
+        </div>
+    </div>
+
+</div>
+
+<app-calendar-helper-btns 
+[delBtnState]="isDelBtnClicked"
+[editBtnState]="isEditBtnClicked"
+[btnStates]="isAuthorized"
+[class]="visitorStatus ? 'helper-btns visitor-btn': 'helper-btns'"
+(handleHelperBtns)="handleStatusHelperBtns($event)"
+>
+</app-calendar-helper-btns>
+</div>

@@ -1,0 +1,100 @@
+.booking-page {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+}
+
+.booking-category {
+    width: 21.875rem;
+    height: 50rem;
+    border-radius: 0.625rem;
+    background: #FFF;
+    /* padding: 1.85rem 2rem; */
+    box-shadow: 0px 4px 50px 0px rgba(5, 51, 84, 0.05);
+    margin-right: 3.87rem;
+    padding-top: 1.87rem;
+    /* margin-top: 1.87rem; */
+}
+
+.booking-category>h5 {
+    width: 15.625rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #053354;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding-bottom: 0.95rem;
+    border-bottom: 1px solid #ECF2F8;
+    margin-bottom: 1.06rem;
+    margin-left: 1.85rem;
+    margin-top: 2rem;
+}
+
+
+.booking-each-category {
+    padding-left: 1.85rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+}
+
+.booking-each-category:hover {
+    cursor: pointer;
+    background: rgba(236, 242, 248, 0.50);
+}
+
+.booking-each-category-count,
+.booking-each-category-count-name {
+    color: #053354;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.booking-each-category-count {
+    margin-right: 0.95rem;
+    color: rgba(5, 51, 84, 0.30)
+}
+
+.booking-doctor {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-doctor-container {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 75.5rem;
+    height: 15.625rem;
+    /* margin: auto; */
+    border-radius: 0.625rem;
+    border: 1px solid #ECF2F8;
+    background: #FFF;
+    box-shadow: 0px 4px 30px 0px rgba(5, 51, 84, 0.05);
+}
+
+.booking-doctor-img {
+    border: none;
+    border-radius: 50%;
+    width: 9.8125rem;
+    height: 9.8125rem;
+    margin-left: 3rem;
+    margin-right: 2.5rem;
+}
+
+.booking-doctor-info {
+    width: 17rem;
+    height: 8.75rem;
+    border-right: 1px solid #ECF2F8;
+}
+
+.booking-doctor-fake-cv {
+    margin-left: 3.2rem;
+}
+
+.booking-doctor-fake-cv>p>span {
+    color: #18A4E1;
+}

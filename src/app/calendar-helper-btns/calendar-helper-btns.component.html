@@ -1,0 +1,8 @@
+<button [class]="editBtnState ? 'edit-btn edit-btn-active' : 'edit-btn' " (click)="displayEdit()" [disabled]="!btnStates">
+    <svg><use xlink:href="assets/icons.svg#edit"></use></svg>
+    რედაქტირება
+</button>
+<button [class]="delBtnState ? 'del-btn del-btn-active' : 'del-btn' "  (click)="displayDelete()" [disabled]="!btnStates">
+    <svg id="del-svg-main"><use xlink:href="assets/icons.svg#calendar-delete"></use></svg>
+    წაშლა
+</button>

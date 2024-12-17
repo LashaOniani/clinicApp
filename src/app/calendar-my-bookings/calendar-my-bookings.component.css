@@ -1,0 +1,21 @@
+.myvisit-btn{
+    position: relative;
+    background:none;
+    cursor: pointer;
+    outline:none;
+    border: none;
+    font-size: 0.875rem;
+    color: #3ACF99;
+}
+
+.myvisit-text{
+    position: absolute;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    top: 0;
+    width: 26.25rem;
+    height: 16.4375rem;
+    z-index: 1;
+}

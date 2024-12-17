@@ -1,0 +1,264 @@
+* {
+    font-family: FiraGO;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.calendar{
+    display: flex;
+    margin-top: 4.20rem;
+    /* flex-direction: column; */
+}
+
+/* .calendar-component {
+    width: 69.4375rem; 
+    height: 43.75rem;  
+    border: 2px solid black;
+} */
+
+.calendar-header {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.calendar-header>h4 {
+    margin: 0.38rem 3rem;
+    font-size: 1.125rem;
+    color: #053354;
+}
+
+.calendar-month-anotation {
+    color: #18A4E1;
+    font-family: FiraGO;
+    font-size: 1.125rem;
+    width: 8.75rem;
+    height: 2.1875rem;
+    margin-right: 0.62rem;
+    margin-left: 0.62rem;
+    border-radius: 3.125rem;
+    border: 1px solid rgba(24, 164, 225, 0.30);
+    padding-top: 0.37rem;
+    padding-bottom: 0.44rem;
+    font-weight: 500;
+}
+
+.calendar-header>button,
+.calendar-main-btn {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #FFF;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 10px rgba(5, 51, 84, 0.05));
+}
+
+.calendar-main-btn{
+    background-color: transparent;
+}
+
+.calendar-header>button>img {
+    width: 0.39556rem;
+    height: 0.69088rem;
+}
+
+.calendar-main-container {
+    width: 51.875rem;
+}
+
+
+.calendar-main {
+    border-radius: 0.625rem;
+    box-shadow: 0px 4px 30px 0px rgba(5, 51, 84, 0.05);
+    margin-top: 1.88rem;
+}
+
+.calendar-main-btn>svg {
+    width: 0.33906rem;
+    height: 0.59219rem;
+    fill: #053354;
+}
+
+.calendar-main-btn:hover{
+    transition: 0.1s ease-in;
+    background-color: #FFF;
+    filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(9deg) brightness(105%) contrast(103%);
+}
+
+.calendar-main-header,
+.calendar-main-workingdays {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-main-header {
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #ECF2F8;
+}
+
+.calendar-main-workingdays-hours,
+.calendar-main-workingdays-days {
+    border: 1px solid #ECF2F8;
+    border-right: none;
+    border-bottom: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.calendar-main-workingdays-hours {
+    border-left: none;
+    color: #053354;
+    font-family: FiraGO;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.addBook {
+    cursor: pointer;
+}
+
+.calendar-days {
+    color: #18A4E1;
+    margin-right: 0.28rem;
+    font-weight: 500;
+}
+
+.weekDays {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 0.31rem;
+    flex-direction: column;
+    background-color: #FFFFF5;
+    border-radius: 0.3125rem;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.unauthorized {
+    position: relative;
+    width: 20rem;
+    height: 4.875rem;
+    border-radius: 0.625rem;
+    background: #FFF;
+    box-shadow: 0px 4px 30px 0px rgba(5, 51, 84, 0.20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: -2.87rem;
+}
+
+.myVisit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0.31rem;
+    right: 0.31rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    border: none;
+    background: #fff;
+    border-radius: 50%;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.myVisit > svg {
+    width: 0.6rem;
+    height: 0.6rem;
+    /* filter: invert(35%) sepia(60%) saturate(5987%) hue-rotate(333deg) brightness(101%) contrast(101%); */
+}
+.delete{
+    color: #FF93A6
+}
+.edit{
+    color: #18A4E1;
+}
+
+.myVisit-text{
+    width: 5.375rem;
+    height: 2.125rem;
+}
+
+.user{
+    margin-top: -0.52rem;
+}
+
+
+.helper-btns{
+    display: flex;
+    flex-direction: column;
+    width: 27rem;
+    align-items: flex-start;
+    gap: 1.25rem;
+    /* justify-content: space-between; */
+    margin-top: 4.068rem;
+    margin-left: 3.13rem;
+}
+
+.r {
+    color: #FF2C52;
+    text-align: center;
+    font-family: FiraGO;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bwh {
+    width: 7.91rem;
+    height: 3.78rem;
+}
+
+.nb {
+    background-color: transparent;
+}
+
+.flex-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-dir-column{
+    flex-direction: column;
+}
+
+.top {
+    height: 3rem;
+}
+
+.cb {
+    color: #053354;
+}
+
+.gb {
+    text-align: center;
+    font-size: 0.875rem;    
+    color: #3ACF99;
+    background: #DAFAEE;
+}
+
+.rb{
+    background: #FF93A6;
+}
+
+.rotate-l {
+    rotate: 180deg;
+}
+.visitor-btn{
+    margin: 0;
+    flex-direction: row;
+    align-self: flex-end;
+    margin-top: 1.94rem;
+    width: auto;
+}

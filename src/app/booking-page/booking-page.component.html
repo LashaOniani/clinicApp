@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="booking-page">
+    <app-category-list></app-category-list>
+    <div class="booking-doctor">
+        <div class="booking-doctor-container">
+            <img class="booking-doctor-img"
+                [src]="emp.Doctor.picData ? 'data:image/png;base64,' + emp.Doctor.picData : '/default-picture/images.png'" />
+            <div class="booking-doctor-info">
+                <h4 class="name">{{emp.Doctor.first_Name}} {{emp.Doctor.last_Name}}</h4>
+                <p class="category">{{emp.Doctor.category_name}}</p>
+                <span class="rating">
+                    <img *ngFor="let star of [].constructor(emp.Doctor.review_count)" src="default-picture/rating-star.png">
+                </span>
+            </div>
+            <div class="booking-doctor-fake-cv">
+                <p><span>Working years - </span>working info 1</p>
+                <p><span>Working years - </span>working info 2</p>
+                <p><span>Working years - </span>working info 3</p>
+            </div>
+        </div>
+
+        <div class="booking-calendar">
+            <app-calendar [doctorId]="doctorId"></app-calendar>
+        </div>
+    </div>
+</div>

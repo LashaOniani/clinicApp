@@ -1,0 +1,7 @@
+<app-header></app-header>
+@if(auth.logged_user.role_name === "Admin"){
+    <app-user-page-admin></app-user-page-admin>
+}@else if(auth.logged_user.role_name === "User" || auth.logged_user.role_name === "Visitor" || auth.logged_user.role_name === "Doctor"){
+    <app-user-page-user [viewToShow]="'myprofile'" [role]="auth.logged_user.role_name"></app-user-page-user>
+}
+<!-- <a [routerLink]="['/employeeRegistration']">თანამშრომლის რეგისტრაცია</a> -->

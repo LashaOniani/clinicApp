@@ -1,0 +1,27 @@
+<main>
+    <app-category-list></app-category-list>
+
+    <div class="user-info-container">
+        <div class="user-img">
+            <img [src]="auth.logged_user.picData ? 'data:image/png;base64,' + auth.logged_user.picData : '/default-picture/images.png'" >
+        </div>
+        <div>
+            {{auth.logged_user.role_name === "User" ? "მომხმარებელი" : "ექიმი"}}
+        </div>
+        <div>
+            {{auth.logged_user.first_Name}} {{auth.logged_user.last_Name}}
+        </div>
+        <div>
+            <h4>email</h4>
+            <span>{{auth.logged_user.email}}</span>
+        </div>
+        <div>
+            <h4>პირადი ნომერი: </h4>
+            <span>{{auth.logged_user.id_card}}</span>
+        </div>
+    </div>
+    <div>
+        <h3>{{auth.logged_user.role_name === "User" ? "ჩემი ჯავშნები" : "განრიგი"}}</h3>
+        <app-calendar [visitorStatus]="role"></app-calendar>
+    </div>
+</main>

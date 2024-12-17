@@ -1,0 +1,69 @@
+input {
+    display: block;
+}
+
+.loginForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37.5rem;
+    height: 28.125rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    background: #FFF;
+    flex-direction: column;
+}
+
+.loginForm-container{
+    display: block;
+    position: fixed;
+    z-index: 1000;
+}
+
+.loginForm-container>input {
+    width: 23.5625rem;
+    padding: 1.5rem 1.25rem;
+    border-radius: 3.125rem;
+    border: 1px solid #ECF2F8;
+    font-size: 0.875rem;
+}
+
+.loginForm-container>input:active {
+    outline: 1px solid #18A4E1;
+}
+
+.loginForm-container>input:focus {
+    outline: 1px solid #18A4E1;
+}
+
+.loginForm-container>button {
+    color: white;
+    width: 11.25rem;
+    height: 2.5rem;
+    border-radius: 3.125rem;
+    background: #053354;
+    margin-top: 2.63rem;
+    cursor: pointer;
+}
+
+.loginForm-container>a {
+    display: block;
+    text-align: end;
+    font-size: 0.875rem;
+    color: #053354;
+    margin-top: 0.3rem;
+
+}
+
+.loginForm-container>h4 {
+    font-size: 1.625rem;
+    font-weight: 500;
+    color: #18A4E1;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2.75rem;
+}
+
+#loginForm-container-email {
+    margin-bottom: 1.25rem;
+}

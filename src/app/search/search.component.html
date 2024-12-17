@@ -1,0 +1,13 @@
+<a [routerLink]="['']">მთავარი</a>
+<form [formGroup]="searchForm">
+    <div>
+        <input id="fullname" type="text" formControlName="fullname" placeholder="Search by Full Name"
+            (keyup)="searchByFullName()" />
+        <input id="speciality" type="text" formControlName="speciality" placeholder="Search by Speciality"
+            (click)="searchByCategory()" />
+    </div>
+
+    <h1 *ngFor="let eachTask of emps.DoctorsList">
+        {{ eachTask.first_Name }}
+    </h1>
+</form>

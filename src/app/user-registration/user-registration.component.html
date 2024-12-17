@@ -1,0 +1,31 @@
+<a [routerLink]="['']">მთავარი</a>
+<p>user-registration works!</p>
+<form [formGroup]="signUpForm" (ngSubmit)="save()">
+    <input placeholder="First Name" type="text" name="first_name" id="name" formControlName="first_name"
+        autocomplete="off">
+    <input placeholder="Last Name" type="text" name="last_name" id="lname" formControlName="last_name"
+        autocomplete="off">
+    <input placeholder="Birthday" type="date" name="birthday" id="bday" formControlName="birthday" autocomplete="off">
+
+    <label>
+        ქალი
+        <input type="radio" value="2" name="gender" formControlName="gender">
+    </label>
+    <label>
+        კაცი
+        <input type="radio" value="1" name="gender" formControlName="gender">
+    </label>
+
+    <input placeholder="ID Number" type="text" name="id_card" id="idnumber" formControlName="id_card"
+        autocomplete="off">
+    <input placeholder="Email" type="text" name="email" id="email" formControlName="email" autocomplete="off">
+    <input placeholder="Phone Number" type="tel" name="phone" id="phone" formControlName="phone" autocomplete="off">
+    <input placeholder="Password" type="password" name="password" id="password" formControlName="password"
+        autocomplete="off">
+
+    <label>
+        სურათი
+        <input type="file" name="picture" (change)="onPictureSelected($event)" />
+    </label>
+    <button>Sign Up</button>
+</form>

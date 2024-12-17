@@ -1,0 +1,12 @@
+<button (click)="changeActiveCategory($event)">რეგისტრაცია</button>
+<button (click)="changeActiveCategory($event)">კატეგორიები</button>
+<button (click)="changeActiveCategory($event)">ექიმები</button>
+<div class="active-category">
+    @if(pageToLoad === "ექიმები"){
+    ექიმები
+    }@else if (pageToLoad === "კატეგორიები") {
+    <app-user-page-admin-categories></app-user-page-admin-categories>
+    }@else {
+    <app-user-page-admin-emp-reg></app-user-page-admin-emp-reg>
+    }
+</div>

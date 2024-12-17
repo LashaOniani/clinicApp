@@ -1,0 +1,35 @@
+<div class="booking-category">
+    <h5 class="header-styling">კატეგორიები</h5>
+    <div [class]="selectedCat === 'evryone'? 'booking-each-category activeCat' : 'booking-each-category' " (click)="filterByCategory('evryone')">
+        <div class="each-category-style-block">
+            <span [class]="selectedCat === 'evryone'? 'booking-each-category-count activeCount' : 'booking-each-category-count'">
+                ( {{categories.catList.length}} )
+            </span>
+            <button class="booking-each-category-count-name">ყველა</button>
+            <span [class]="selectedCat === 'evryone' ? 'booking-each-category-count-svg activeSvg' : 'booking-each-category-count-svg'">
+                <svg class="icon"><use xlink:href="assets/icons.svg#arrow-right"></use></svg>
+            </span>
+        </div>
+    </div>
+    <div [class]="selectedCat === eachCategory.categoryName ? 'booking-each-category activeCat' : 'booking-each-category' " *ngFor="let eachCategory of categories.catList"
+        (click)="filterByCategory(eachCategory.categoryName)">
+        
+        <div class="each-category-style-block">
+
+            <span [class]="selectedCat === eachCategory.categoryName? 'booking-each-category-count activeCount' : 'booking-each-category-count'">
+                ( {{eachCategory.categoryDoctorsCount}} )
+            </span>
+
+            <button class="booking-each-category-count-name">{{eachCategory.categoryName}}</button>
+
+            <span [class]="selectedCat === eachCategory.categoryName ? 'booking-each-category-count-svg activeSvg' : 'booking-each-category-count-svg'">
+                <svg class="icon"><use xlink:href="assets/icons.svg#arrow-right"></use></svg>
+            </span>
+
+        </div>
+    </div>
+    <button class="header-styling bt">
+        <p>სრულად ნახვა</p>
+        <svg class="icon"><use xlink:href="assets/icons.svg#arrow-right"></use></svg>
+    </button>
+</div>

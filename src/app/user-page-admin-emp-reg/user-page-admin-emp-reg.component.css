@@ -1,0 +1,83 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 95rem;
+    margin: auto;
+}
+
+#form-header {
+    align-self: start;
+}
+
+form {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 31.5rem 31.5rem 31.5rem;
+    gap: 2.5rem;
+}
+
+input,
+select,
+button,
+.cust-label {
+    width: 30rem;
+    height: 3.125rem;
+    border-radius: 3.125rem;
+    border: 1px solid rgba(24, 164, 225, 0.30);
+    padding-left: 1.25rem;
+}
+
+.form-gender {
+    width: 30rem;
+    height: 3.125rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form-gender>input,
+input[type="file"] {
+    display: none;
+}
+
+.form-gender>label {
+    color: black;
+    border: 1px solid rgba(24, 164, 225, 0.30);
+    border-radius: 3.125rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 1rem 2.2rem;
+}
+
+.form-gender>label:hover {
+    color: white;
+    background-color: #053354;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 1rem 2.2rem;
+    font-weight: bold;
+}
+
+.cust-label {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+
+.cust-label>img {
+    margin-right: 1.25rem;
+}
+
+input[type="radio"]:checked+label {
+    background-color: #053354;
+    color: white;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    padding-bottom: 0.31rem;
+    padding-left: 1.2rem;
+}

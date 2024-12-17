@@ -1,0 +1,14 @@
+<!-- <p>{{visitorStatus === "User" ? 'ჩემი ჯავშანი' : 'დაჯავშნილია'}}</p> -->
+<button class="myvisit-btn" *ngIf="visitorStatus == 'User'; else elseBtn" (click)="display()">ჩემი<br>ჯავშანი</button>
+<ng-template #elseBtn>
+    <button>დაჯავშნილია</button>
+</ng-template>
+<ng-container *ngIf="displayState">
+    <div class="myvisit-text">
+        <h1>{{empService.Doctor.first_Name}} {{empService.Doctor.last_Name}}</h1>
+        <h5>{{empService.Doctor.category_name}}</h5>
+        <textarea [readonly]="!isEditBtnClicked">{{bookingObject.reservation_Description}}</textarea>
+        <button *ngIf="isEditBtnClicked" (click)="updateReservationText(bookingObject)">რედაქტირება</button>
+        <button *ngIf="isDelBtnClicked" (click)="deleteReservation(bookingObject)">წაშლა</button>
+    </div>
+</ng-container>

@@ -1,0 +1,11 @@
+<!-- <a [routerLink]="['']">მთავარი</a> -->
+<form class="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="loginForm-container">
+        <h4>ავტორიზაცია</h4>
+        <input type="text" id="loginForm-container-email" placeholder="ელ. ფოსტა / ტელეფონის ნომერი" name="username" formControlName="username"
+        autocomplete="off">
+        <input type="password" placeholder="პაროლი" name="password" formControlName="password" autocomplete="off">
+        <a [routerLink]="['./SignUp']">რეგისტრაცია</a>
+        <button type="submit">შესვლა</button>
+    </div>
+</form>

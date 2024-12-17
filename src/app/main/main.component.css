@@ -1,0 +1,169 @@
+* {
+    font-family: FiraGO;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 101.25rem;
+    margin: auto;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.7rem;
+}
+
+.eachDoc {
+    width: 24.375rem;
+    height: 24.375rem;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(24, 164, 225, 0.30);
+    background: #FFF;
+    box-shadow: 0px 4px 30px 0px rgba(5, 51, 84, 0.05);
+    padding-left: 0.62rem;
+    padding-right: 1.25rem;
+    padding-top: 0.65rem;
+    padding-bottom: 2.19rem;
+}
+
+.eachDoc-fv {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eachDoc-vc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.875rem;
+    border-radius: 3.125rem;
+    background: rgba(236, 242, 248, 0.50);
+    padding: 0.63rem 0.31rem;
+    padding-right: 0.94rem;
+}
+
+.eachDoc-vc>img {
+    margin-right: 0.37rem;
+}
+
+.eachDoc-vc>span {
+    color: rgba(5, 51, 84, 0.50);
+    letter-spacing: 0.07rem;
+}
+
+.eachDoc-pin {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.eachDoc-pin>img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.doctors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.eachDoc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categories>option {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.profilepic {
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    margin-top: -0.5625rem;
+}
+
+.profilepic-name-container {
+    margin-top: 0.94rem;
+    margin-bottom: 0.56rem;
+    height: 1.375rem;
+    font-size: 1.125rem;
+    color: #053354;
+}
+
+.doctor-category {
+    color: rgba(5, 51, 84, 0.30);
+    text-align: center;
+    font-size: 1rem;
+    height: 1.1875rem;
+    margin-bottom: 0.5rem;
+}
+
+.doctorbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12.5rem;
+    height: 3.125rem;
+    border-radius: 1.5625rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 1.44rem 1rem;
+    border: none;
+    margin-top: 1.37rem;
+}
+
+
+.doctorbtnsvg {
+    margin-left: 0.78rem;
+    width: 0.45206rem;
+    height: 0.78956rem;
+    fill: #053354
+}
+
+.doctorbtn:hover {
+    transition: 0.3s ease;
+    color: #18A4E1;
+    background-color: #FFF;
+    border: 1px solid #18A4E1;
+}
+
+.doctorbtn:hover .doctorbtnsvg {
+    fill: #18A4E1;
+    transition: 0.05s ease;
+}
+
+.add-button-container {
+    margin-top: 1.12rem;
+    text-align: end;
+}
+
+.add-button {
+    border: none;
+    background-color: transparent;
+    color: #053354;
+    font-size: 0.875rem;
+    padding-top: 0.125rem;
+    padding-right: 1.11769rem;
+    padding-bottom: 0.34375rem;
+    padding-left: 0.01375rem;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to left, #18A4E1 5rem, transparent 2.44rem) 100% 1;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    color: #18A4E1;
+    transition: 0.2s ease-in;
+}

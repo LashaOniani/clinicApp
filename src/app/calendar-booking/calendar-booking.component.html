@@ -1,0 +1,16 @@
+<button 
+(click)="changeDisplayState()" 
+class="addbooking" 
+[disabled]="btnState"><span class="g">+ </span> <span [className]="display ? 'g' : ''">დაჯავშნა</span></button>
+
+<form [formGroup]="bookingForm" (ngSubmit)="save(bookingForm.value)" *ngIf="display ? true : null" >
+    <div class="question-close-container">
+        <p>გსურთ ვიზიტის დაჯავშნა?</p>
+        <button class="close-btn" type="button" (click)="changeDisplayState()"><img src="/default-picture/close.png" /></button>
+    </div>
+    <p class="ins-desc">შეგიძლიათ მიუთითოთ თქვენი პრობლემა</p>
+    <textarea placeholder="აღწერა..." name="description" id="dec" formControlName="description" required></textarea>
+    <br>
+    <button class="submit-btn" type="submit">დაჯავშნა</button>
+</form>
+

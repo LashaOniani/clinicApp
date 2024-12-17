@@ -1,0 +1,62 @@
+<nav>
+    <div class="logo" [routerLink]="['']">
+        <img src="/default-picture/logo.png" />
+        <h1>კლინიკა</h1>
+    </div>
+
+    <ul>
+        <li>ექიმები</li>
+        <li>სერვისები</li>
+        <li>კლინიკები</li>
+        <li>ანოტაციები</li>
+        <li>აქციები</li>
+        <li>სერვისები</li>
+        <li>მედიკამენტები</li>
+        <li>კონტაქტი</li>
+    </ul>
+
+    <div class="profile">
+
+        <ng-container *ngIf="isLocalStorageTokenExsist === false; else elseContainer">
+            <div class="auth">
+                <button id="login-button" (click)="displayAuth()">ავტორიზაცია</button>
+                <span> / </span>
+                <a [routerLink]="['/signUp']">რეგისტრაცია</a>
+                <!-- <a [routerLink]="['/login']">ავტორიზაცია</a> -->
+            </div>
+        </ng-container>
+
+        <ng-template #elseContainer>
+            <div class="user" [routerLink]="['/user']">
+
+                <img [src]="auth.logged_user.picData ? 'data:image/png;base64,' + auth.logged_user.picData : '/default-picture/images.png'" />
+                <div>
+                    <ng-container *ngIf="auth.logged_user.category_name; else displayUserTemplate">
+                        <span>{{ auth.logged_user.first_Name }} {{auth.logged_user.last_Name}}</span>
+                    </ng-container>
+                    <ng-template #displayUserTemplate>
+                        <ng-container *ngIf="!auth.logged_user.category_name">
+                            @if(auth.logged_user.role_name === "Admin" ){
+                                ადმინისტრატორი
+                            }@else if (auth.logged_user.role_name === "Moderator") {
+                                მოდერატორი
+                            }@else if (auth.logged_user.role_name === "Editor") {
+                                ედიტორი
+                            }@else {
+                                {{auth.logged_user.first_Name}} {{auth.logged_user.last_Name}}
+                            }
+                        </ng-container>
+                    </ng-template>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</nav>
+<ng-container *ngIf="this.dispState && !this.isLocalStorageTokenExsist">
+    <div class="floating-authorization-background" (click)="dispState=false" *ngIf="this.dispState && !this.isLocalStorageTokenExsist ? true : null">
+        <button id="close-btn"><img src="default-picture/close.png" (click)="dispState=false" /></button>
+        <div class="floating-authorization">
+            <app-login (click)="$event.stopPropagation()"></app-login>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,49 @@
+<app-header>
+
+</app-header>
+<div class="main-container">
+    <main>
+        <!-- <div class="categories">
+            <h2>კატეგორიები</h2>
+            <option (click)="save('evryone')">ყველა</option>
+            <option *ngFor="let eachCategory of categories.catList" (click)="save(eachCategory.categoryName)">
+                ({{eachCategory.categoryDoctorsCount}}) {{eachCategory.categoryName}}
+            </option>
+        </div> -->
+        <app-category-list></app-category-list>
+        <div>
+            <section class="doctors">
+                <div class="eachDoc" *ngFor="let eachDoc of empServ.DoctorsList">
+                    <div class="eachDoc-fv">
+                        <div class="eachDoc-vc">
+                            <img src="/default-picture/viewEye.png">
+                            <span>{{eachDoc.view_count}}</span>
+                        </div>
+                        <button class="eachDoc-pin"><img src="default-picture/pinIcon.png"></button>
+                    </div>
+                    <img class="profilepic"
+                        [src]="eachDoc.picData ? 'data:image/png;base64,' + eachDoc.picData : '/default-picture/images.png'" />
+                    <span class="profilepic-name-container">
+                        <h5>{{eachDoc.first_Name}} {{eachDoc.last_Name}}</h5>
+                    </span>
+                    <span class="doctor-category">
+                        <p>{{eachDoc.category_name}}</p>
+                    </span>
+                    <div>
+                        <img *ngFor="let star of [].constructor(eachDoc.review_count)"
+                            src="/default-picture/rating-star.png">
+                    </div>
+                    <button class="doctorbtn" (click)="routeToBooking(eachDoc.id)">
+                        მიღებაზე ჩაწერა
+                        <svg class="doctorbtnsvg"><use xlink:href="assets/icons.svg#arrow-right"></use></svg>
+                    </button>
+                </div>
+            </section>
+            <div class="add-button-container">
+                <button class="add-button" (click)="getEmpList()">სრულად ნახვა</button>
+            </div>
+
+        </div>
+
+    </main>
+</div>

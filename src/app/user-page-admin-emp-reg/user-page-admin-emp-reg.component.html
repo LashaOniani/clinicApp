@@ -1,0 +1,93 @@
+<!-- <a [routerLink]="['']">მთავარი</a> -->
+<div class="form-container">
+    <h3 id="form-header">რეგისტრაცია</h3>
+    <form [formGroup]="signUpForm" (ngSubmit)="save()">
+        <div>
+            <label for="name">სახელი</label>
+            <input placeholder="First Name" type="text" name="first_name" id="name" formControlName="first_name"
+                autocomplete="off">
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input placeholder="Email" type="text" name="email" id="email" formControlName="email" autocomplete="off">
+        </div>
+
+        <div>
+            <label for="idnumber">პირადი ნომერი</label>
+            <input placeholder="ID Number" type="text" name="id_card" id="idnumber" formControlName="id_card"
+                autocomplete="off">
+        </div>
+
+        <div>
+            <label for="lname">გვარი</label>
+            <input placeholder="Last Name" type="text" name="last_name" id="lname" formControlName="last_name"
+                autocomplete="off">
+        </div>
+
+        <div>
+            <label for="password">პაროლი</label>
+            <input placeholder="Password" type="password" name="password" id="password" formControlName="password"
+                autocomplete="off">
+        </div>
+
+        <div>
+            <label for="password">დაბადების თარიღი</label>
+            <input placeholder="Birthday" type="date" name="birthday" id="bday" formControlName="birthday"
+                autocomplete="off">
+        </div>
+
+
+        <label>
+            სქესი
+            <div class="form-gender">
+                <input type="radio" value="2" id="female" name="gender" formControlName="gender">
+                <label for="female">ქალი</label>
+                <input type="radio" value="1" id="male" name="gender" formControlName="gender">
+                <label for="male">კაცი</label>
+            </div>
+        </label>
+
+        <div>
+            <label for="phone">მობილურის ნომერი</label>
+            <input placeholder="Phone Number" type="text" name="phone" id="phone" formControlName="phone"
+                autocomplete="off">
+        </div>
+
+        <div>
+            <label for="pic">სურათი</label>
+            <label for="pic" class="cust-label"><img src="default-picture/upldpic.png"></label>
+            <input type="file" id="pic" name="picture" (change)="onPictureSelected($event)" />
+        </div>
+
+        <div>
+            <label for="cv">რეზიუმე</label>
+            <label for="cv" class="cust-label"><img src="default-picture/upldcv.png"></label>
+            <input type="file" id="cv" name="cv" (change)="onCvSelected($event)" />
+        </div>
+
+        <div>
+            <label for="role">როლი</label>
+            <select id="role" formControlName="role_id" (change)="onRoleChange($event)">
+                <option value="2">მოდერატორი</option>
+                <option value="3">ედიტორი</option>
+                <option value="4">თანამშრომელი</option>
+            </select>
+        </div>
+
+        <div *ngIf="categories.catList.length && isEmployee ? categories.catList[0] : null">
+
+            <label for="categ" *ngIf="categories.catList.length && isEmployee ? categories.catList[0] : null">
+                კატეგორია
+            </label>
+            <select id="categ" *ngIf="categories.catList.length && isEmployee ? categories.catList[0] : null"
+                formControlName="category_id">
+                <option *ngFor="let eachCategory of categories.catList" [value]="eachCategory.categoryId">
+                    {{eachCategory.categoryName}}</option>
+            </select>
+        </div>
+
+        <br *ngIf="isEmployee ? null : true">
+        <button type="submit" [disabled]="!signUpForm.valid">Sign Up</button>
+    </form>
+</div>

@@ -1,0 +1,134 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+button{
+    background:none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.booking-category {
+    width: 21.875rem;
+    border-radius: 0.625rem;
+    background: #FFF;
+    box-shadow: 0px 4px 50px 0px rgba(5, 51, 84, 0.05);
+    margin-right: 3.75rem;
+    padding-top: 1.87rem;
+    padding-bottom: 1.7rem;
+}
+
+.header-styling {
+    width: 15.625rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #053354;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding-bottom: 0.94rem;
+    border-bottom: 1px solid #ECF2F8;
+    margin-bottom: 0.67rem;
+    margin-left: 1.85rem;
+}
+
+.booking-each-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    padding-left: 2.5rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+    margin-bottom: 0.31rem;
+}
+
+.booking-each-category:hover {
+    cursor: pointer;
+    background: rgba(236, 242, 248, 0.50);
+}
+
+.each-category-style-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 16.56rem;
+}
+
+.booking-each-category-count-svg > svg{
+    visibility: hidden;
+}
+
+.booking-each-category:hover .booking-each-category-count-svg > svg{
+    color:#18A4E1;
+    visibility: visible;
+}
+
+.booking-each-category:hover .booking-each-category-count {
+    color: #18A4E1;
+}
+
+.booking-each-category-count,
+.booking-each-category-count-name {
+    color: #053354;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.booking-each-category-count-name{
+    width: 11.3125rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.booking-each-category-count {
+    /* margin-right: 0.95rem; */
+    color: rgba(5, 51, 84, 0.30)
+}
+
+.bt{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #18A4E1;
+    font-size: 0.875rem;
+    border-top: 1px solid #ECF2F8;
+    margin-top: 1.62rem;
+    padding-top: 0.81rem;
+    padding-bottom: 0;
+    /* margin-bottom: 1.87rem; */
+}
+
+.icon{
+    width: 0.45206rem;
+    height: 0.78956rem;
+}
+
+.bt > p {
+    margin-right: 0.62rem;
+}
+
+.bt > svg{
+    rotate: 90deg;
+}
+
+.activeCat {
+    cursor: pointer;
+    background: rgba(236, 242, 248, 0.50);
+}
+.activeCount {
+    color: #18A4E1;
+}
+.activeSvg > .icon {
+    color: #18A4E1;
+    visibility: visible;
+}
